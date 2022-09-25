@@ -7,7 +7,7 @@ def info_replacer():
     file_exists = False
     while not file_exists:
         workbook_name = input("Please enter Excel file name: ")
-        if not workbook_name.__contains__(".xlsx"):
+        if not ".xlsx" in workbook_name:
             workbook_name = workbook_name + ".xlsx"
 
         file_exists = os.path.exists(workbook_name)
