@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/StringFindAndReplaceExcel.iml" filepath="$PROJECT_DIR$/.idea/StringFindAndReplaceExcel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FindAndReplaceExcel.iml" filepath="$PROJECT_DIR$/.idea/FindAndReplaceExcel.iml" />
     </modules>
   </component>
 </project>
