@@ -1,6 +1,37 @@
 
 from openpyxl import load_workbook
 import os
+import PyQt5.QtWidgets as qtw
+import PyQt5.QtGui as qtg
+class MainWindow(qtw.QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("User input")
+
+        self.setLayout(qtw.QVBoxLayout())
+
+        my_label = qtw.QLabel("Hello World! What's your name?")
+        my_label.setFont(qtg.QFont('Helvetica', 18))
+        self.layout().addWidget(my_label)
+
+        my_entry = qtw.QLineEdit()
+
+        my_entry.setObjectName("name_field")
+        my_entry.setText("Placeholder text")
+
+        self.layout().addWidget(my_entry)
+
+        my_button = qtw.QPushButton("Press me!",
+                                    clicked = lambda: press_it())
+        return "Your mum"
+
+        def press_it():
+            my_label.setText(f'Hello {my_entry.text()}')
+            my_entry.setText("")
+
+        self.layout().addWidget(my_button)
+        self.show()
+
 
 def get_user_input():
     file_exists = False
@@ -34,6 +65,11 @@ def info_replacer():
     wb = load_workbook(filename = file_name)
     for sheet in wb:
         print(sheet.title)
+    app = qtw.QApplication([])
+    mw = MainWindow()
+
+    app.exec_()
+
 
 if __name__ == '__main__':
     info_replacer()
